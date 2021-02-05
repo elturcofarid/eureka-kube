@@ -12,7 +12,7 @@ pipeline {
         stage('Package') {
             steps {
                 echo "-=- packaging project -=-"
-                 sh "mvn package"
+                 sh "docker ps"
             }
         }
 
