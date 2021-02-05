@@ -1,9 +1,9 @@
 pipeline {
      agent {
-    docker {
-        image 'maven:3-alpine'
-        
-    }
+    docker { 
+            image 'node:12.16.2'
+            args '-p 3000:3000'
+        } 
 } 
     environment {
         APP_NAME = "eureka-server"
