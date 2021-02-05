@@ -1,6 +1,5 @@
 pipeline {
-    agent any
-
+     agent { docker 'maven:3-alpine' } 
     environment {
         APP_NAME = "eureka-server"
         TEST_CONTAINER_NAME = "${APP_NAME}-${BUILD_NUMBER}"
