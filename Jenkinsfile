@@ -17,30 +17,12 @@ pipeline {
             }
         }
 
-      stage('Delete Docker Container') {
-            steps {
-              script{
-       		 try{
-                echo "-=- delete Docker container -=-"
-                sh "docker stop  ${APP_NAME}"
-                sh "docker rm  ${APP_NAME}"
-               sh "docker image rm ${APP_NAME}:test"
-            }      
-         catch(Exception e) {
-           echo "-=- -=-"
-             
-          
-        }}
-            }}
-     
-
         stage('Build Docker image') {
             steps {
                 echo "-=- build Docker image -=-"
               sh "sudo docker build -t ${APP_NAME}:test ."
             }
         }
-
 
 
         stage('Run Docker image') {
