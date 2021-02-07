@@ -22,7 +22,6 @@ pipeline {
               script{
        		 try{
                 echo "-=- delete Docker container -=-"
-                      sh "kubectl get all"
                 sh "docker stop  ${APP_NAME}"
                 sh "docker rm  ${APP_NAME}"
                sh "docker image rm ${APP_NAME}:test"
