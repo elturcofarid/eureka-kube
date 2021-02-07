@@ -13,7 +13,7 @@ pipeline {
         stage('Package') {
             steps {
                 echo "-=- packaging project -=-"
-                 sh "docker ps"
+                 sh "ls"
             }
         }
 
