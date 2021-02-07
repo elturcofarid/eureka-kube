@@ -13,7 +13,7 @@ pipeline {
         stage('Package') {
             steps {
                 echo "-=- packaging project -=-"
-                 sh "sudo mvn package"
+                 sh "mvn package"
             }
         }
 
