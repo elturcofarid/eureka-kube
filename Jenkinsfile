@@ -16,7 +16,7 @@ pipeline {
         stage('Construcción de Imagen') {
             steps {
                 echo "-=- build Docker image -=-"
-              sh "sudo docker build -t ${APP_NAME}:test ."
+              sh "sudo -S docker build -t ${APP_NAME}:test ."
             }
         }
 
@@ -24,7 +24,7 @@ pipeline {
         stage('Deployment eb Kubernetes') {
             steps {
                 echo "-=- run Docker image -=-"
-                sh "sudo kubectl apply -f eureka.yaml"
+                sh "sudo -S kubectl apply -f eureka.yaml"
             }
         }
   }
