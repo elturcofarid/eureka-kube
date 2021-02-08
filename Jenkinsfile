@@ -24,7 +24,7 @@ pipeline {
         stage('Deployment eb Kubernetes') {
             steps {
                 echo "-=- run Docker image -=-"
-                sh "kubectl apply -f eureka.yaml"
+                sh "sudo kubectl apply -f eureka.yaml"
             }
         }
   }
